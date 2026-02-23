@@ -1,0 +1,53 @@
+html, body, #root { height: 100%; width: 100%; margin: 0; padding: 0; }
+
+.leaflet-container { height: 100%; width: 100%; }
+
+
+.fg-control {
+  background: rgba(255,255,255,0.95);
+  border-radius: 0.5rem;
+  box-shadow: 0 0.25rem 0.75rem rgba(0,0,0,0.15);
+}
+
+.fg-control button {
+  width: 42px;
+  height: 42px;
+}
+
+
+:root {
+  
+  --fg-country: #13b5e5;  
+  --fg-currency: #f4b400;  
+  --fg-weather: #d63b43;   
+  --fg-wiki: #2f343a;     
+  --fg-news: #6c757d;     
+  --fg-border-stroke: #3a4cff;
+  --fg-border-fill: #3a4cff;
+}
+
+/* Modal button colours */
+.fg-btn-country { background: var(--fg-country) !important; border-color: var(--fg-country) !important; color: #fff !important; }
+.fg-btn-currency { background: var(--fg-currency) !important; border-color: var(--fg-currency) !important; color: #000 !important; }
+.fg-btn-weather { background: var(--fg-weather) !important; border-color: var(--fg-weather) !important; color: #fff !important; }
+.fg-btn-wiki { background: var(--fg-wiki) !important; border-color: var(--fg-wiki) !important; color: #fff !important; }
+.fg-btn-news { background: var(--fg-news) !important; border-color: var(--fg-news) !important; color: #fff !important; }
+
+
+.fg-modal-header { color: #fff; }
+.fg-modal-country .modal-header { background: var(--fg-country); }
+.fg-modal-currency .modal-header { background: var(--fg-currency); color: #000; }
+.fg-modal-weather .modal-header { background: var(--fg-weather); }
+.fg-modal-wiki .modal-header { background: var(--fg-wiki); }
+.fg-modal-news .modal-header { background: var(--fg-news); }
+
+
+.fg-modal-country .btn-close,
+.fg-modal-weather .btn-close,
+.fg-modal-wiki .btn-close,
+.fg-modal-news .btn-close {
+  filter: invert(1) grayscale(100%);
+}
+
+
+.modal-content { border-radius: 0.5rem; }

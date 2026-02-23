@@ -1,0 +1,24 @@
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "8080:8080"
+    env_file:
+      - .env
+    environment:
+      SPRING_PROFILES_ACTIVE: prod
+      FRONTEND_ORIGIN: "http://localhost:5173"
+
+    
+      GAZETTEER_OPENCAGE_KEY: ${OPENCAGE_KEY}
+      GAZETTEER_OPENWEATHER_KEY: ${OPENWEATHER_KEY}
+      GAZETTEER_OER_KEY: ${OPENEXCHANGERATES_KEY}
+      GAZETTEER_GEONAMES_USER: ${GEONAMES_USER}
+      GAZETTEER_WORLDNEWS_KEY: ${WORLDNEWS_KEY}
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "5173:80"
+    depends_on:
+      - backend
