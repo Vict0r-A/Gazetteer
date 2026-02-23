@@ -22,7 +22,7 @@ An interactive, full-stack web application that allows exploaration of any count
   
 
 
- ![App in action](<img width="1440" height="807" alt="Screenshot 2026-02-23 at 12 38 50" src="https://github.com/user-attachments/assets/3f967e73-886f-4256-83d6-c30bf049bce6" />)
+ ![App in action]<img width="1440" height="807" alt="Screenshot 2026-02-23 at 12 38 50" src="https://github.com/user-attachments/assets/3f967e73-886f-4256-83d6-c30bf049bce6" />
 
  [Click this to see the live app](https://www.victoradams.co.uk/project1/public/)
 
