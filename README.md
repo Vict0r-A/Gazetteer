@@ -2,7 +2,7 @@
 An interactive, full-stack web application that allows exploaration of any country, with access to its key information such as its borders, weather, exchange rates, and Wikipedia information.
 
 # Tech Stack
-- Frontend: HTML5, JavaScript (ES6), jQuery, Leaflet, MarkerCluster, Toastify, Bootstrap, Font Awesome
+- Frontend: React and Typescript
 - Backend: Java (Springboot) 
 - Data/APIs: Rest Countries, OpenCage, OpenWeather, Open Exchange Rates, GeoNames
 - APIs:
@@ -12,7 +12,7 @@ An interactive, full-stack web application that allows exploaration of any count
   - Open Exchange Rates - (https://openexchangerates.org/)
   - GeoNames - (https://www.geonames.org/)
   - OpenMeteo - (https://open-meteo.com/)
-- Data file: `libs/data/countryBorders.geo.json` (data for country borders)
+- Data file: `src/data/countryBorders.geo.json` (data for country borders)
 
 # Functionality
 - Attempts to detect your current location and highlight your country. If location permissions are denied, the UK is the default country highlighted
@@ -21,7 +21,8 @@ An interactive, full-stack web application that allows exploaration of any count
 
   
 
- ![App in action](https://github.com/user-attachments/assets/9a6aff68-082e-436c-9042-7133973edda8)
+
+ ![App in action](<img width="1440" height="807" alt="Screenshot 2026-02-23 at 12 38 50" src="https://github.com/user-attachments/assets/3f967e73-886f-4256-83d6-c30bf049bce6" />)
 
  [Click this to see the live app](https://www.victoradams.co.uk/project1/public/)
 
@@ -30,14 +31,19 @@ An interactive, full-stack web application that allows exploaration of any count
 1. clone git repository 
    
    git clone https://github.com/Vict0r-A/Gazetteer.git
-   cd <VictorAdams>project1
 
-2. Create your api_key file
-   - cp php/api_key.template.php php/api_key.php
-   - open php/api_key.php and fill in you API keys/usernames
+
+2. Create your own api keys 
+   
 3. 
-  -  Run it locally. using php's built in server php -S localhost:8000 -t public
-  - then open  http://localhost:8000 in your browser
+  -  Run it locally -From project root:
+  -   cd backend
+  -  mvn spring-boot:run
+  -  open  http://localhost:8080 in your browser
+  -  From project root
+  -  cd frontend
+  -  npm run dev
+  -   open  http://localhost:5173 in your browser
 
 
 ## Authors
@@ -97,24 +103,3 @@ npm run dev
 Frontend runs on: `http://localhost:5173`
 
 Vite proxies `/api/*` to `http://localhost:8080`.
-
-## 4) Endpoints (backend)
-
-These mirror your Project 1 PHP contracts:
-
-- `GET /api/borders?action=list`
-- `GET /api/borders?action=border&code=GB`
-- `GET /api/country?code=GB` or `GET /api/country?lat=..&lng=..`
-- `GET /api/weather?lat=..&lng=..`
-- `GET /api/weather/forecast?lat=..&lng=..&days=5`
-- `GET /api/fx?ccy=GBP`
-- `GET /api/geonames/cities?country=GB&lang=en`
-- `GET /api/geonames/wikipedia?north=..&south=..&east=..&west=..&lang=en`
-- `GET /api/geonames/earthquakes?north=..&south=..&east=..&west=..`
-- `GET /api/news?code=GB&page=1&q=&lang=en&category=`
-
-## Notes
-
-- The map click selects a country using reverse geocoding (OpenCage), then loads borders.
-- Overlays (Cities / Wikipedia / Earthquakes) load from GeoNames and cluster markers.
-- Modals are Bootstrap-styled via `react-bootstrap` (no jQuery).
